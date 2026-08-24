@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Grid Layout Example</title>
     <link rel="stylesheet" href="style.css"> 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-92PB0FHFTR');
+</script>
 </head>
 <body>
 
@@ -17,6 +26,18 @@
 <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/ogg">
 Your browser does not support the video tag
 </video>
+<!-- Video အောက်မှာ View Count ပြမည့်နေရာ -->
+<div style="margin-top: 10px; font-size: 16px; color: #333; font-weight: bold;">
+  👁️ ကြည့်ရှုသူအရေအတွက်: <span id="visits">0</span> ကြိမ်
+</div>
+
+<!-- View Count တိုးပေးမည့် Script -->
+<script>
+  function cb(response) {
+      document.getElementById('visits').innerText = response.value;
+  }
+</script>
+<script async src="https://api.countapi.xyz/hit/catkalay-tharginaywonn/video1?callback=cb"></script>
         </aside>
         
         <main class="main-content">

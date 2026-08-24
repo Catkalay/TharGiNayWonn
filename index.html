@@ -26,18 +26,32 @@
 <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/ogg">
 Your browser does not support the video tag
 </video>
-<!-- Video အောက်မှာ View Count ပြမည့်နေရာ -->
-<div style="margin-top: 10px; font-size: 16px; color: #333; font-weight: bold;">
-  👁️ ကြည့်ရှုသူအရေအတွက်: <span id="visits">0</span> ကြိမ်
+<!-- Video အောက်တွင် ထည့်ရန် HTML -->
+<div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #333;">
+  👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #007bff;">1</span> ကြိမ်
 </div>
 
-<!-- View Count တိုးပေးမည့် Script -->
+<!-- View Count တွက်ချက်ပေးမည့် Script -->
 <script>
-  function cb(response) {
-      document.getElementById('visits').innerText = response.value;
-  }
+  (function() {
+    let count = localStorage.getItem('page_view_count') || 0;
+    count = parseInt(count) + 1;
+    localStorage.setItem('page_view_count', count);
+    
+    fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
+      .then(res => res.json())
+      .then(data => {
+        if(data && data.count) {
+          document.getElementById('visits').innerText = data.count;
+        } else {
+          document.getElementById('visits').innerText = count;
+        }
+      })
+      .catch(err => {
+        document.getElementById('visits').innerText = count;
+      });
+  })();
 </script>
-<script async src="https://api.countapi.xyz/hit/catkalay-tharginaywonn/video1?callback=cb"></script>
         </aside>
         
         <main class="main-content">

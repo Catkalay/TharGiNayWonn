@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>သာကီနေဝဏ်းသိုင်း (ပင်မ)</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
+            <p>Thar Gi Nay Wonn</p>
+        </header>
+        
+        <aside class="left-sidebar">
+            <video width="100%" controls autoplay muted>
+                <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </aside>
+        
+        <main class="main-content">
+            <marquee>
+                <h2 style="color:Tomato;">" မင်္ဂလာပါ " ***** ဝင်ရောက်ကြည့်ရှုပေးလို့ ကျေးဇူးအများကြီး တင်ပါတယ် *****</h2>
+            </marquee>
+            
+            <h3>ကျွန်ုပ်၏ကိုယ်ရေးရာဇဝင်အကျဉ်း</h3>
+            <p>ဒီနေရာမှာ သိုင်းပညာအကြောင်းနဲ့ ကိုယ်ရေးရာဇဝင် အသေးစိတ်ကို ဆက်လက်ရေးသားနိုင်ပါတယ်...</p>
+            
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </main>
+        
+        <aside class="right-sidebar">
+            <nav>
+                <h2>Menu</h2>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="category.html">Category</a></p>
+                <p><a href="course.html">Course</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </nav>
+        </aside>
+        
+        <footer class="footer">
+            <p class="rainbow-text">© 2026 Thar Gi Nay Wonn - All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+</body> 
+</html>

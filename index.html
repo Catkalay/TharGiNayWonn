@@ -7,31 +7,37 @@
     <link rel="stylesheet" href="style.css"> 
 
     <style>
-        .right-sidebar #google_translate_element select {
-            background-color: #f9f9f9;
-            color: #333;
-            padding: 8px 12px;
-            font-size: 16px;
-            font-family: Arial, Helvetica, sans-serif;
+        .language-switcher {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid #ccc;
-            border-radius: 6px;
-            outline: none;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .right-sidebar #google_translate_element select:hover {
-            border-color: #007bff;
-            background-color: #fff;
+        .language-switcher a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
-        .goog-te-gadget {
-            font-size: 0px !important;
-            color: transparent !important;
+        .language-switcher a:hover {
+            background: #e6e6e6;
+            color: #007bff;
         }
-        .goog-te-gadget select {
-            font-size: 16px !important;
-            color: #333 !important;
+        .language-switcher img {
+            width: 24px;
+            height: auto;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
         .goog-te-banner-frame {
             display: none !important;
@@ -125,7 +131,7 @@
             </p>
             <p>
                 အထက်ပါအကြောင်းအချက်တိုသည်ကျွန်ုပ်အားသိုင်းပညာကိုနှစ်သက်မြတ်နိုးစေခြင် ဝါသနာပါစေခြင်းလိုက်စားစေခြင်းလှုံ့ဆော်လာခဲ့ရာ မူလဗီဇအားဖြင့် ငယ်စဉ်ကပင် ထိုးသတ် နပမ်းလုံး တုတ် ဓား လက်နက် ဖြင့်လှုပ်ရှားရသည်ကို ဝါသနာထုံခဲ့သည့်အားလျှော်စွာပို၍ ထကြွနိုးကြားခဲ့ရပါသည်။
-                သိုသော်လည်း ၁၉۴၁-ခုဒီဇင်ဘာလ(၂၃) ရက်နေ့တွင့်မြန်မာပြည်အား၊ ဂျပန်တိုစတင်ဗုံးကြဲတိုက်ခိုက်သဖြင့် ခေတ်ပျက်သွားရာစစ်ပြေးအဖြစ် မြောင်းမြမြိုသိုသွားရောက်နေထိုင်ခဲ့ရပါသည်။
+                သိုသော်လည်း ၁၉၄၁-ခုဒီဇင်ဘာလ(၂၃) ရက်နေ့တွင့်မြန်မာပြည်အား၊ ဂျပန်တိုစတင်ဗုံးကြဲတိုက်ခိုက်သဖြင့် ခေတ်ပျက်သွားရာစစ်ပြေးအဖြစ် မြောင်းမြမြိုသိုသွားရောက်နေထိုင်ခဲ့ရပါသည်။
                 ထိုနောက် ၁၉۴၂ -ခုနှစ်တွင်ရန်ကုန်ကြည့်မြင်တိုင်စမ်းချေချင်းမင်္ဂလာလမ်းအိမ်အမှတ်(၂၁) ကျွန်တော့်အဖွားအိမ်သိုပြန်လည်ပြောင်းရွေ့နေထိုင်ခဲ့ကြပါသည်။
                 စမ်းချောင်းအရပ်ဒေသသည်ယခင်မှသည် ယခုတိုင်ရှမ်းနှင့်မြန်မာများနေထိုင်လျှက်ရှိသောဒေသဖြစ်ဖြစ်သည်။ ရှမ်းတိုသည် ဓလေ့ထုံးစံအားဖြင့်၎င်း၊ အလေ့အထအားဖြင့်၎င်းသိုင်းပညာရပ်အသီးသီးးကို မကြာခဏဘာသာရေး မင်္ဂလာပွဲများတွင်အသုံးပြုလေ့ရှိသည်ဖြစ်ရာကျွန်တော်၏မူလဗီဇဝါနာကိုတဖန်ပြန်လည်နိူးဆွပေးခဲ့ပါသည်။
                 ထိုစဉ်ရှမ်းပြည် အင်းလေးဒေသမှရှမ်းကုန်သည် ဦးလှမောင်နှင့်ဦးဘရင်စသည့်ပုဂ္ဂိုလ်များနှင့်ဆက်သွယ်ရာကျွန်ုပ်၏နေအိမ်မှာပင်- ကျွန်ုပ်နှင့်အတူအခြားပုဂ္ဂိုလ်များပင်ခေတ်ပျက် ( ဂျပန်ခေတ် ) ကာလအတွင်းရှမ်းတရုတ်သိုင်းပညာကိုသင်ကြားခဲ့ပါသည်။
@@ -185,7 +191,14 @@
         </script>
         
         <aside class="right-sidebar">
-            <div id="google_translate_element" style="margin-bottom: 15px;"></div>
+            <div class="language-switcher">
+                <a href="#" onclick="changeLanguage('my'); return false;" title="Myanmar">
+                    <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar Flag"> မြန်မာ
+                </a>
+                <a href="#" onclick="changeLanguage('en'); return false;" title="English">
+                    <img src="https://flagcdn.com/w40/us.png" alt="English Flag"> English
+                </a>
+            </div>
 
             <h2>
                 <p><a href="index.html">Home</a></p>
@@ -220,13 +233,24 @@
         </footer>
     </div>
 
+
+    <div id="google_translate_element" style="display:none;"></div>
+
     <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'my',
         includedLanguages: 'en,my',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        autoDisplay: false
       }, 'google_translate_element');
+    }
+
+    function changeLanguage(langCode) {
+        var selectField = document.querySelector(".goog-te-combo");
+        if (selectField) {
+            selectField.value = langCode;
+            selectField.dispatchEvent(new Event('change'));
+        }
     }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

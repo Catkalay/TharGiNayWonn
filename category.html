@@ -6,7 +6,7 @@
     <title>Category - သာကီနေဝဏ်းသိုင်း</title>
     <link rel="stylesheet" href="style.css"> 
     
-
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,14 +16,98 @@
       gtag('config', 'G-92PB0FHFTR');
     </script>
 
-
     <style>
         body {
             cursor: url('logo sword 3d.png'), auto;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            background-color: #e9e197; 
         }
 
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 3px;
+        }
+
+        
+        .content-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch; 
+            width: 100%;
+            box-sizing: border-box;
+            gap: 5px; 
+        }
+
+        
+       .left-sidebar {
+            flex: 0 0 26%;
+            max-width: 26%; 
+            background-color: #530000;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .main-content {
+            flex: 0 0 46%;
+            max-width: 46%; 
+            background-color: transparent; 
+            padding: 0 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .right-sidebar {
+            flex: 0 0 26%;
+            max-width: 26%; 
+            background-color: #530000;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .footer {
+            width: 100%;
+            margin-top: 5px;
+            background-color: #070707;
+            box-sizing: border-box;
+            clear: both;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        .main-content ul {
+            margin-left: 20px;
+        }
 
         .language-switcher {
             display: flex;
@@ -58,6 +142,31 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
+        .right-sidebar h2 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .right-sidebar h2 p {
+            margin: 8px 0;
+        }
+
+        .right-sidebar h2 a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            padding: 6px 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .right-sidebar h2 a:hover {
+            background: #e0e0e0;
+        }
+
         #myBtn {
             display: none;
             position: fixed;
@@ -80,113 +189,113 @@
 </head>
 <body>
 
-    <div class="container">
-        <header class="header"></header>
+    <div class="page-wrapper">
+        <header class="header">
+            <img src="Titleedit.webp" alt="Title Banner">
+        </header>
         
-        <aside class="left-sidebar">
-            <video width="270" height="240" controls autoplay>
-                <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/mp4">
-                <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/ogg">
-                Your browser does not support the video tag
-            </video>
-            <div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #333;">
-              👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #007bff;">1</span> ကြိမ်
-            </div>
-            <script>
-              (function() {
-                let count = localStorage.getItem('page_view_count') || 0;
-                count = parseInt(count) + 1;
-                localStorage.setItem('page_view_count', count);
-                
-                fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
-                  .then(res => res.json())
-                  .then(data => {
-                    if(data && data.count) {
-                      document.getElementById('visits').innerText = data.count;
-                    } else {
-                      document.getElementById('visits').innerText = count;
-                    }
-                  })
-                  .catch(err => {
-                    document.getElementById('visits').innerText = count;
-                  });
-              })();
-            </script>
-            
-
-            <div style="margin-top: 15px; text-align: center;">
-              <a href="http://s01.flagcounter.com/more/FqA"><img src="https://s01.flagcounter.com/count2/FqA/bg_D4D4D4/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-            </div>
-        </aside>
         
-        <main class="main-content">
-
-            <marquee>
-                <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
-                    <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
-                    <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
-                    <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
-                    </span>
-                    </span>
-                </h1>
-            </marquee>
+        <div class="content-container">
             
-<center>
-                <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
-                <h1>Thar Gi Nay Wonn</h1>
-            </center>
-            <center>
-                <h2>**************************************************************************************************</h2>
-            </center>
-            <center><h2>လှုပ်ရှားမှုများ</h2></center>
+            <aside class="left-sidebar">
+                <video width="100%" controls autoplay>
+                    <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/mp4">
+                    <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/ogg">
+                    Your browser does not support the video tag
+                </video>
+                <div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #ffe713;">
+                  👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #ffeb3b;">1</span> ကြိမ်
+                </div>
+                <script>
+                  (function() {
+                    let count = localStorage.getItem('page_view_count') || 0;
+                    count = parseInt(count) + 1;
+                    localStorage.setItem('page_view_count', count);
+                    
+                    fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
+                      .then(res => res.json())
+                      .then(data => {
+                        if(data && data.count) {
+                          document.getElementById('visits').innerText = data.count;
+                        } else {
+                          document.getElementById('visits').innerText = count;
+                        }
+                      })
+                      .catch(err => {
+                        document.getElementById('visits').innerText = count;
+                      });
+                  })();
+                </script>
+                <div style="margin-top: 15px; text-align: center;">
+                  <a href="http://s01.flagcounter.com/more/FqA"><img src="https://s01.flagcounter.com/count2/FqA/bg_D4D4D4/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                </div>
+            </aside>
             
-            <h4>၁.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
-            <center><img src="001.webp" width="680" height="510"></center>
+            <main class="main-content">
+                <marquee>
+                    <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
+                        <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
+                        <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
+                        <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
+                        </span>
+                        </span>
+                    </h1>
+                </marquee>
                 
-            <h4>၂.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
-            <center><img src="002.webp" width="auto" height="auto"></center>
-            
-            <h4>၃.  နွေရာသီ တဆင့်မြင့် သင်တန်းများ</h4>
-            <center><img src="003.webp" width="auto" height="auto"></center>
-            
-            <h4>၄.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
-            <center><img src="004.webp" width="auto" height="auto"></center>
-            
-            <h4>၅.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
-            <center><img src="005.webp" width="auto" height="auto"></center>
-            
-            <h4>၆.  နွေရာသီ အခြေခံ သင်တန်းများ</h4>
-            <center><img src="009.webp" width="auto" height="auto"></center>
-            <center><img src="008.webp" width="auto" height="auto"></center>
-            <h4>၇.  ပြိုင်ပွဲ မှတ်တမ်း</h4>
-            <center><img src="Battle.webp" width="auto" height="auto"></center>
-            <center><img src="bando.webp" width="auto" height="auto"></center>
-            <center><img src="006.webp" width="auto" height="auto"></center>
-            <center><img src="007.webp" width="auto" height="auto"></center>
-        </main>
+                <center>
+                    <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
+                    <h1>Thar Gi Nay Wonn</h1>
+                </center>
+                <center>
+                    <h2>***************</h2>
+                </center>
+                <center><h2>လှုပ်ရှားမှုများ</h2></center>
+                
+                <h4>၁.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
+                <center><img src="001.webp" width="auto" height="auto"></center>
+                    
+                <h4>၂.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
+                <center><img src="002.webp" width="auto" height="auto"></center>
+                
+                <h4>၃.  နွေရာသီ တဆင့်မြင့် သင်တန်းများ</h4>
+                <center><img src="003.webp" width="auto" height="auto"></center>
+                
+                <h4>၄.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
+                <center><img src="004.webp" width="auto" height="auto"></center>
+                
+                <h4>၅.  အခြေခံကျောင်းများတွင် သင်ကြားပေးနေပုံ</h4>
+                <center><img src="005.webp" width="auto" height="auto"></center>
+                
+                <h4>၆.  နွေရာသီ အခြေခံ သင်တန်းများ</h4>
+                <center><img src="009.webp" width="auto" height="auto"></center>
+                <center><img src="008.webp" width="auto" height="auto"></center>
+                <h4>၇.  ပြိုင်ပွဲ မှတ်တမ်း</h4>
+                <center><img src="Battle.webp" width="auto" height="auto"></center>
+                <center><img src="bando.webp" width="auto" height="auto"></center>
+                <center><img src="006.webp" width="auto" height="auto"></center>
+                <center><img src="007.webp" width="auto" height="auto"></center>
+            </main>
 
+            <aside class="right-sidebar">
+                <div class="language-switcher">
+                    <a href="#" onclick="changeLanguage('my'); return false;">
+                        <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
+                    </a>
+                    <a href="#" onclick="changeLanguage('en'); return false;">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English"> English
+                    </a>
+                </div>
 
-        <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
+                <h2>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="category.html">Category</a></p>
+                    <p><a href="course.html">Course</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </h2>
+            </aside>
 
-
-        <aside class="right-sidebar">
-            <div class="language-switcher">
-                <a href="#" onclick="changeLanguage('my'); return false;">
-                    <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
-                </a>
-                <a href="#" onclick="changeLanguage('en'); return false;">
-                    <img src="https://flagcdn.com/w40/us.png" alt="English"> English
-                </a>
-            </div>
-
-            <h2>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="category.html">Category</a></p>
-                <p><a href="course.html">Course</a></p>
-                <p><a href="about.html">About</a></p>
-                <p><a href="contact.html">Contact</a></p>
-            </h2>
-        </aside>
+        </div>
 
         <footer class="footer">
             <style>
@@ -201,8 +310,6 @@
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     animation: rainbow 8s ease infinite;
-                    
-
                     -webkit-text-stroke: 0.8px white;
                     filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.8));
                 }
@@ -216,6 +323,7 @@
         </footer>
     </div>
 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
 
     <script>
         let mybutton = document.getElementById("myBtn");
@@ -234,7 +342,6 @@
           document.documentElement.scrollTop = 0;
         }
     </script>
-
 
     <div id="google_translate_element" style="display:none;"></div>
 

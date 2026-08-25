@@ -6,7 +6,6 @@
     <title>သင်ခန်းစာများ - သာကီနေဝဏ်းသိုင်း</title>
     <link rel="stylesheet" href="style.css"> 
     
-   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,15 +15,94 @@
       gtag('config', 'G-92PB0FHFTR');
     </script>
 
-  
     <style>
         body {
             cursor: url('logo sword 3d.png'), auto;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            background-color: #e9e197;
         }
 
-       
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 3px;
+        }
+
+        
+        .content-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch; 
+            width: 100%;
+            box-sizing: border-box;
+            gap: 5px;
+        }
+
+      .left-sidebar {
+            flex: 0 0 26%;
+            max-width: 26%; 
+            background-color: #530000;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow: hidden; 
+        }
+
+        .main-content {
+            flex: 0 0 46%;
+            max-width: 46%; 
+            background-color: transparent; 
+            padding: 0 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .right-sidebar {
+            flex: 0 0 26%;
+            max-width: 26%; 
+            background-color: #530000;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .footer {
+            width: 100%;
+            margin-top: 5px;
+            background-color: #070707;
+            box-sizing: border-box;
+            clear: both;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
         .language-switcher {
             display: flex;
             flex-direction: column;
@@ -58,6 +136,31 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
+        .right-sidebar h2 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .right-sidebar h2 p {
+            margin: 8px 0;
+        }
+
+        .right-sidebar h2 a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            padding: 6px 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .right-sidebar h2 a:hover {
+            background: #e0e0e0;
+        }
+
         #myBtn {
             display: none;
             position: fixed;
@@ -74,10 +177,9 @@
             border-radius: 4px;
         }
         #myBtn:hover {
-            background-color: #012fc4;
+            background-color: #d3009e;
         }
 
-       
         .rainbow-text {
             font-size: 1.5em;
             font-weight: bold;
@@ -98,7 +200,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        
         .main-content ul {
             margin-left: 30px;
         }
@@ -106,127 +207,126 @@
 </head>
 <body>
 
-    <div class="container">
-        
-        <header class="header"></header>
+    <div class="page-wrapper">
+        <header class="header">
+            <img src="Titleedit.webp" alt="Title Banner">
+        </header>
         
        
-        <aside class="left-sidebar">
-            <video width="270" height="240" controls autoplay>
-                <source src="course.mp4" type="video/mp4">
-                <source src="course.mp4" type="video/ogg">
-                Your browser does not support the video tag
-            </video>
+        <div class="content-container">
             
-            <div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #333;">
-              👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #007bff;">1</span> ကြိမ်
-            </div>
-            <script>
-              (function() {
-                let count = localStorage.getItem('page_view_count') || 0;
-                count = parseInt(count) + 1;
-                localStorage.setItem('page_view_count', count);
+            <aside class="left-sidebar">
+                <video width="100%" controls autoplay>
+                    <source src="course.mp4" type="video/mp4">
+                    <source src="course.mp4" type="video/ogg">
+                    Your browser does not support the video tag
+                </video>
                 
-                fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
-                  .then(res => res.json())
-                  .then(data => {
-                    if(data && data.count) {
-                      document.getElementById('visits').innerText = data.count;
-                    } else {
-                      document.getElementById('visits').innerText = count;
-                    }
-                  })
-                  .catch(err => {
-                    document.getElementById('visits').innerText = count;
-                  });
-              })();
-            </script>
+                <div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #ffe713;">
+                  👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #ffeb3b;">1</span> ကြိမ်
+                </div>
+                <script>
+                  (function() {
+                    let count = localStorage.getItem('page_view_count') || 0;
+                    count = parseInt(count) + 1;
+                    localStorage.setItem('page_view_count', count);
+                    
+                    fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
+                      .then(res => res.json())
+                      .then(data => {
+                        if(data && data.count) {
+                          document.getElementById('visits').innerText = data.count;
+                        } else {
+                          document.getElementById('visits').innerText = count;
+                        }
+                      })
+                      .catch(err => {
+                        document.getElementById('visits').innerText = count;
+                      });
+                  })();
+                </script>
 
-            <div style="margin-top: 15px; text-align: center;">
-              <a href="http://s01.flagcounter.com/more/FqA"><img src="https://s01.flagcounter.com/count2/FqA/bg_D4D4D4/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-            </div>
-        </aside>
-        
-      
-        <main class="main-content">
-           
-            <marquee>
-                <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
-                    <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
-                    <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
-                    <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
-                    </span>
-                    </span>
-                </h1>
-            </marquee>
+                <div style="margin-top: 15px; text-align: center;">
+                  <a href="http://s01.flagcounter.com/more/FqA"><img src="https://s01.flagcounter.com/count2/FqA/bg_D4D4D4/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                </div>
+            </aside>
             
-            <center>
-                <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
-                <h1>Thar Gi Nay Wonn</h1>
-            </center>
+            <main class="main-content">
+                <marquee>
+                    <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
+                        <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
+                        <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
+                        <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
+                        </span>
+                        </span>
+                    </h1>
+                </marquee>
+                
+                <center>
+                    <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
+                    <h1>Thar Gi Nay Wonn</h1>
+                </center>
 
-            <h2>သင်ခန်းစာများ</h2>
-            <h2>၁။ အခြေခံ လက်ရေး ၆၃ ကွက်</h2>
+                <h2>သင်ခန်းစာများ</h2>
+                <h2>၁။ အခြေခံ လက်ရေး ၆၃ ကွက်</h2>
+                
+                <p>မြန်မာနိုင်ငံ ရှိ သိုင်းပညာရှင်ဆရာကြီးများမှ စုပေါင်း ဖန်တီးထားသော အခြေခံ လက်ရေး ၆၃ ကွက် မှာ -</p>
+                
+                <ul style="list-style-type: none;">
+                    <li>၁။ ခေါင်း အုပ်စု ၄ ချက်</li>
+                    <li>၂။ လက်သီး အုပ်စု ၆ ချက်</li>
+                    <li>၃။ လက်ဝါးဇောင်း အုပ်စု ၆ ချက်</li>
+                    <li>၄။ လက်ဖနောင့် အုပ်စု ၄ ချက်</li>
+                    <li>၅။ လက်ဖျံ အုပ်စု ၈ ချက်</li>
+                    <li>၆။ တံတောင် အုပ်စု ၈ ချက်</li>
+                    <li>၇။ ဒူး အုပ်စု ၄ ချက်</li>
+                    <li>၈။ ခြေဖျား အုပ်စု ၄ ချက်</li>
+                    <li>၉။ ခြေဇောင်း အုပ်စု ၄ ချက်</li>
+                    <li>၁၀။ တိမ်းထိုင် ယိမ်းထိုင် ၂ ချက်</li>
+                    <li>၁၁။ လက်စုံ ၁၃ နည်း</li>
+                </ul>
+                
+                <p>တို့ပါဝင်တယ်။</p>
+                <p>ဒီ အခြေခံ လက်ရေး ၆၃ ကွက်ဟာ ရိုးရာသိုင်းပညာကို စတင် သင်ယူတော့မယ် ဆိုရင် အခြေခံ အကျဆုံး အပင်ပန်းဆုံး ဖြစ်ပါတယ်။ ဘာကြောင့်လည်း ဆိုတော့ ရိုးရာသိုင်း ရဲ့ ဟန် ( ပုံစံ ) ကို အသားကျအောင်လေ့ကျင့်ရတဲ့ အဆင့် ဖြစ်နေလို့ပါ။</p>
+                
+                <p>အခု အခြေခံဖြစ်တဲ့ လက်ရေး ၆၃ ကွက် ရဲ့ -</p>
+                <ul style="list-style-type: none;">
+                    <li>အယူအဆ သဘောတရား</li>
+                    <li>အတိမ်း အယိမ်း</li>
+                    <li>အထိုင် ပုံစံ တွေ</li>
+                </ul>
+                
+                <p style="margin-top: 15px;">ပိုင်ပိုင်နိုင်နိုင် ကျွမ်းကျင်ပြီ ဆိုရင် နောက်ပိုင်း သင်ယူရမယ့် တဆင့်မြင်၊ အဆင့်မြင့်သင်ရိုး တွေကို အခက်အခဲ မရှိ လေ့လာသင်ယူနိုင်မှာဖြစ်တဲ့အတွက် အခြေခံ ၆၃ ကွက် ဟာ ကိုယ့်ကိုယ်ကို ယုံကြည်မှု တည်ဆောက်ရတဲ့ အဆင့်လို့ ဆိုနိုင်ပါတယ်။</p>
+            </main>
             
-            <p>မြန်မာနိုင်ငံ ရှိ သိုင်းပညာရှင်ဆရာကြီးများမှ စုပေါင်း ဖန်တီးထားသော အခြေခံ လက်ရေး ၆၃ ကွက် မှာ -</p>
-            
-            <ul style="list-style-type: none;">
-                <li>၁။ ခေါင်း အုပ်စု ၄ ချက်</li>
-                <li>၂။ လက်သီး အုပ်စု ၆ ချက်</li>
-                <li>၃။ လက်ဝါးဇောင်း အုပ်စု ၆ ချက်</li>
-                <li>၄။ လက်ဖနောင့် အုပ်စု ၄ ချက်</li>
-                <li>၅။ လက်ဖျံ အုပ်စု ၈ ချက်</li>
-                <li>၆။ တံတောင် အုပ်စု ၈ ချက်</li>
-                <li>၇။ ဒူး အုပ်စု ၄ ချက်</li>
-                <li>၈။ ခြေဖျား အုပ်စု ၄ ချက်</li>
-                <li>၉။ ခြေဇောင်း အုပ်စု ၄ ချက်</li>
-                <li>၁၀။ တိမ်းထိုင် ယိမ်းထိုင် ၂ ချက်</li>
-                <li>၁၁။ လက်စုံ ၁၃ နည်း</li>
-            </ul>
-            
-            <p>တို့ပါဝင်တယ်။</p>
-            <p>ဒီ အခြေခံ လက်ရေး ၆၃ ကွက်ဟာ ရိုးရာသိုင်းပညာကို စတင် သင်ယူတော့မယ် ဆိုရင် အခြေခံ အကျဆုံး အပင်ပန်းဆုံး ဖြစ်ပါတယ်။ ဘာကြောင့်လည်း ဆိုတော့ ရိုးရာသိုင်း ရဲ့ ဟန် ( ပုံစံ ) ကို အသားကျအောင်လေ့ကျင့်ရတဲ့ အဆင့် ဖြစ်နေလို့ပါ။</p>
-            
-            <p>အခု အခြေခံဖြစ်တဲ့ လက်ရေး ၆၃ ကွက် ရဲ့ -</p>
-            <ul style="list-style-type: none;">
-                <li>အယူအဆ သဘောတရား</li>
-                <li>အတိမ်း အယိမ်း</li>
-                <li>အထိုင် ပုံစံ တွေ</li>
-            </ul>
-            
-            <p style="margin-top: 15px;">ပိုင်ပိုင်နိုင်နိုင် ကျွမ်းကျင်ပြီ ဆိုရင် နောက်ပိုင်း သင်ယူရမယ့် တဆင့်မြင်၊ အဆင့်မြင့်သင်ရိုး တွေကို အခက်အခဲ မရှိ လေ့လာသင်ယူနိုင်မှာဖြစ်တဲ့အတွက် အခြေခံ ၆၃ ကွက် ဟာ ကိုယ့်ကိုယ်ကို ယုံကြည်မှု တည်ဆောက်ရတဲ့ အဆင့်လို့ ဆိုနိုင်ပါတယ်။</p>
-        </main>
-        
-      
-        <aside class="right-sidebar">
-            <div class="language-switcher">
-                <a href="#" onclick="changeLanguage('my'); return false;">
-                    <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
-                </a>
-                <a href="#" onclick="changeLanguage('en'); return false;">
-                    <img src="https://flagcdn.com/w40/us.png" alt="English"> English
-                </a>
-            </div>
+            <aside class="right-sidebar">
+                <div class="language-switcher">
+                    <a href="#" onclick="changeLanguage('my'); return false;">
+                        <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
+                    </a>
+                    <a href="#" onclick="changeLanguage('en'); return false;">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English"> English
+                    </a>
+                </div>
 
-            <h2>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="category.html">Category</a></p>
-                <p><a href="course.html">Course</a></p>
-                <p><a href="about.html">About</a></p>
-                <p><a href="contact.html">Contact</a></p>
-            </h2>
-        </aside>
+                <h2>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="category.html">Category</a></p>
+                    <p><a href="course.html">Course</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </h2>
+            </aside>
 
-       
+        </div>
+
         <footer class="footer">
             <marquee><h3 class="rainbow-text">***** SMART Group မှ တည်ဆောက်သည် *****</h3></marquee>
         </footer>
     </div>
 
-   
     <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
 
-  
     <script>
         let mybutton = document.getElementById("myBtn");
         window.onscroll = function() {scrollFunction()};
@@ -245,8 +345,7 @@
         }
     </script>
 
-
-    <div id="google_translate_element" style="display:none;">double check</div>
+    <div id="google_translate_element" style="display:none;"></div>
 
     <script type="text/javascript">
     function googleTranslateElementInit() {

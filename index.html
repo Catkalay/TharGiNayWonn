@@ -20,18 +20,91 @@
         body {
             cursor: url('logo sword 3d.png'), auto;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            background-color: #e9e197; 
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5px;
+            box-sizing: border-box;
         }
 
-      
-        img, video {
-            max-width: 100%;
+        .header {
+            width: 100%;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        .header img {
+            width: 100%;
             height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 3px;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch; 
+            width: 100%;
+            box-sizing: border-box;
+            gap: 1px;
         }
 
         
+        .left-sidebar {
+            flex: 0 0 26%;
+            max-width: 26%; 
+            background-color: #530000;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow: hidden; 
+        }
+
+        .main-content {
+            flex: 0 0 46%;
+            max-width: 46%; 
+            background-color: transparent; 
+            padding: 0 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .right-sidebar {
+            flex: 0 0 26%;
+            max-width: 26%; 
+            background-color: #530000;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .footer {
+            width: 100%;
+            margin-top: 5px;
+            background-color: #070707;
+            box-sizing: border-box;
+            clear: both;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
         .main-content ul {
-            margin-left: 30px;
+            margin-left: 20px;
         }
 
         .language-switcher {
@@ -67,6 +140,31 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
+        .right-sidebar h2 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .right-sidebar h2 p {
+            margin: 8px 0;
+        }
+
+        .right-sidebar h2 a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            padding: 6px 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .right-sidebar h2 a:hover {
+            background: #e0e0e0;
+        }
+
         #myBtn {
             display: none;
             position: fixed;
@@ -89,117 +187,119 @@
 </head>
 <body>
 
-    <div class="container">
-        <header class="header"></header>
+    <div class="page-wrapper">
+        <header class="header">
+            <img src="Titleedit.webp" alt="Title Banner">
+        </header>
         
-        <aside class="left-sidebar">
-            <video width="270" height="240" controls autoplay>
-                <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/mp4">
-                <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/ogg">
-                Your browser does not support the video tag
-            </video>
-            <div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #333;">
-              👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #007bff;">1</span> ကြိမ်
-            </div>
-            <script>
-              (function() {
-                let count = localStorage.getItem('page_view_count') || 0;
-                count = parseInt(count) + 1;
-                localStorage.setItem('page_view_count', count);
+        <div class="content-container">
+            <aside class="left-sidebar">
+                <video width="100%" controls autoplay>
+                    <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/mp4">
+                    <source src="နေ့သစ်_စိုင်းထီးဆိုင်_2.mp4" type="video/ogg">
+                    Your browser does not support the video tag
+                </video>
+                <div style="margin-top: 12px; font-size: 16px; font-weight: bold; color: #ffe713;">
+                  👁️ ကြည့်ရှုသူ အရေအတွက်: <span id="visits" style="color: #007bff;">1</span> ကြိမ်
+                </div>
+                <script>
+                  (function() {
+                    let count = localStorage.getItem('page_view_count') || 0;
+                    count = parseInt(count) + 1;
+                    localStorage.setItem('page_view_count', count);
+                    
+                    fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
+                      .then(res => res.json())
+                      .then(data => {
+                        if(data && data.count) {
+                          document.getElementById('visits').innerText = data.count;
+                        } else {
+                          document.getElementById('visits').innerText = count;
+                        }
+                      })
+                      .catch(err => {
+                        document.getElementById('visits').innerText = count;
+                      });
+                  })();
+                </script>
+                <div style="margin-top: 15px; text-align: center;">
+                  <a href="http://s01.flagcounter.com/more/FqA"><img src="https://s01.flagcounter.com/count2/FqA/bg_D4D4D4/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                </div>
+            </aside>
+            
+            <main class="main-content">
+                <marquee>
+                    <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
+                        <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
+                        <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
+                        <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
+                        </span>
+                        </span>
+                    </h1>
+                </marquee>
                 
-                fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
-                  .then(res => res.json())
-                  .then(data => {
-                    if(data && data.count) {
-                      document.getElementById('visits').innerText = data.count;
-                    } else {
-                      document.getElementById('visits').innerText = count;
-                    }
-                  })
-                  .catch(err => {
-                    document.getElementById('visits').innerText = count;
-                  });
-              })();
-            </script>
-            <div style="margin-top: 15px; text-align: center;">
-              <a href="http://s01.flagcounter.com/more/FqA"><img src="https://s01.flagcounter.com/count2/FqA/bg_D4D4D4/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-            </div>
-        </aside>
-        
-        <main class="main-content">
-            <marquee>
-                <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
-                    <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
-                    <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
-                    <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
-                    </span>
-                    </span>
-                </h1>
-            </marquee>
-            
-            <center>
-                <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
-                <h1>Thar Gi Nay Wonn</h1>
-            </center>
-            <center><h3>***သာကီနေဝဏ်း သိုင်းအဖွဲ့ တည်ထောင်သူ နာယက ဆရာကြီး ဆရာကြီးဦးလှအောင် ၏ ကိုယ်တိုင်ရေး အတ္ထုပ္ပတ္တိ အကျဉ်း***</h3></center>
-            
-            <p>
-                ကျွန်ုပ်သည်  ၁၂၉၁-ခုနှစ် ဝါဆိုလပြည့်ကျော် ၁၀ရက်နေ့တွင် ရန်ကုန် ကြည့်မြင်တိုင်၊ စမ်းချောင်းရပ်၊ မင်္ဂလာလမ်း၊ အမှတ် (၂၁ ) တွင် အဘ ဦးဘရွှေ၊ အမိဒေါ်ခင်မြင့် တို့မှ မွေးဖွားသန့်စင်ခဲ့ပါသည်။ အမည်အားဖြင့် ဦးလှအောင် ဟု‌မှတ်ယူပါသည်။ 
-                စမ်းချောင်းတွင် မွေးဖွားသန့်စင်ခဲ့သော်လည်း ဗိုလ်တစ်ထောင်မြို(၆၁)လမ်း၊အိမ်အမှတ်(၅၅)တွင်နေထိုင်လျှက်၊ ပညာသင်ရင်းကြီးထွားလာခဲ့ပါသည်။  ဗိုလ်တစ်ထောင်မြို့ ရှိ၊ ပန်းခြံလမ်း၊ ၆၁-လမ်း ၊၆၂ လမ်းခပ်တက်တန်း (ခ)ကမ်းနားလမ်းတဝိုက်သည် ကုလားလူမျိုးများအများအပြားနေထိုင်သောရပ်ကွက်တစ်ခုဖြစ်သည်။
+                <center>
+                    <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
+                    <h1>Thar Gi Nay Wonn</h1>
+                </center>
+                <center><h3>သာကီနေဝဏ်း သိုင်းအဖွဲ့ တည်ထောင်သူ </h3><h3>နာယက ဆရာကြီး ဆရာကြီးဦးလှအောင် ၏ ကိုယ်တိုင်ရေး အတ္ထုပ္ပတ္တိ အကျဉ်း/h3></center>
+                
+                <p>
+                    ကျွန်ုပ်သည်  ၁၂၉၁-ခုနှစ် ဝါဆိုလပြည့်ကျော် ၁၀ရက်နေ့တွင် ရန်ကုန် ကြည့်မြင်တိုင်၊ စမ်းချောင်းရပ်၊ မင်္ဂလာလမ်း၊ အမှတ် (၂၁ ) တွင် အဘ ဦးဘရွှေ၊ အမိဒေါ်ခင်မြင့် တို့မှ မွေးဖွားသန့်စင်ခဲ့ပါသည်။ အမည်အားဖြင့် ဦးလှအောင် ဟု‌မှတ်ယူပါသည်။ 
+                    စမ်းချောင်းတွင် မွေးဖွားသန့်စင်ခဲ့သော်လည်း ဗိုလ်တစ်ထောင်မြို(၆၁)လမ်း၊အိမ်အမှတ်(၅၅)တွင်နေထိုင်လျှက်၊ ပညာသင်ရင်းကြီးထွားလာခဲ့ပါသည်။  ဗိုလ်တစ်ထောင်မြို့ ရှိ၊ ပန်းခြံလမ်း၊ ၆၁-လမ်း ၊၆၂ လမ်းခပ်တက်တန်း (ခ)ကမ်းနားလမ်းတဝိုက်သည် ကုလားလူမျိုးများအများအပြားနေထိုင်သောရပ်ကွက်တစ်ခုဖြစ်သည်။
 
-                သိုင်းပညာမျိုးစေ့ချခြင်း
-                ဗိုလ်တစ်ထောင်မြိုတွင်နေထိုင်ကြသော ၊ ကုလား(ဝါ) အိန္ဒိယလူမျိုးများအနက် ဟိန္ဒူ နှင့်ဝိင်္လယာလူမျိုးတိုသည် အပိုင်းလိုက် သီးသန့် နေထိုင်ကြပါသည်။ ၎င်းတို့သည် အများအားဖြင့် လသာသော ညများတွင်အုပ်စုလိုက်ဖွဲကြ၍
-                <ul style="list-style-type: none;">
-                    <li>(က) ဟိန္ဒူများသည်အတွဲလိုက်နဘမ်းလုံးခြင်း၊</li>
-                    <li>(ခ) တုတ်ရှည်သိုင်းကစားခြင်း၊</li>
-                </ul>
-                တို့ကိုအလေ့အထတစ်ခုအနေဖြင့်အမြဲပြုလုပ်လေ့ရှိကြသည်။ 
+                    သိုင်းပညာမျိုးစေ့ချခြင်း
+                    ဗိုလ်တစ်ထောင်မြိုတွင်နေထိုင်ကြသော ၊ ကုလား(ဝါ) အိန္ဒိယလူမျိုးများအနက် ဟိန္ဒူ နှင့်ဝိင်္လယာလူမျိုးတိုသည် အပိုင်းလိုက် သီးသန့် နေထိုင်ကြပါသည်။ ၎င်းတို့သည် အများအားဖြင့် လသာသော ညများတွင်အုပ်စုလိုက်ဖွဲကြ၍
+                    <ul style="list-style-type: none;">
+                        <li>(က) ဟိန္ဒူများသည်အတွဲလိုက်နဘမ်းလုံးခြင်း၊</li>
+                        <li>(ခ) တုတ်ရှည်သိုင်းကစားခြင်း၊</li>
+                    </ul>
+                    တို့ကိုအလေ့အထတစ်ခုအနေဖြင့်အမြဲပြုလုပ်လေ့ရှိကြသည်။ 
 
-                တစ်ခါတစ်ရံတရုတ်လူမျိုး လူငယ်မျက်လှည့်အဖွဲများသည် ရပ်ကွက်အတွင်းသို့လှည့်လည်ကြလျှက်
-                <ul style="list-style-type: none;">
-                    <li>(၁) ဂျွမ်းဘားကစားပြသခြင်း</li>
-                    <li>(၂) ဒါးမရှည်(တုတ်ရှည်ထိပ်တွင် ဓားမ တတ်သိုင်းကစားပြခြင်း။</li>
-                    <li>(၃) ၃- ခွလှံတန် သိုင်းကစားခြင်းတိုပြသအလှူခံလေ့ရှိပါသည်။</li>
-                </ul>
-                အဓိကအားဖြင့်၊ ၁၉၃၆ - ၃၇ လောက်တွင်ဖြစ်ပွားသော ကုလားမြန်မာ အဓိကရုဏ်းတွင် ဗိုလ်တစ်ထောင်မြို့နယ်သို့ ခေတ္တအလည်ရောက်လာသော မြန်မာလူမျိုးညီအကိုနှစ်ဦးတို့ သည်ဆွမ်းခံသွားရင်း ငှက်သင့်ကိုသကဲ့သိုအဓိကရုဏ်းနှင့်ကြုံလာခဲ့ပါသည်။
-            </p>
+                    တစ်ခါတစ်ရံတရုတ်လူမျိုး လူငယ်မျက်လှည့်အဖွဲများသည် ရပ်ကွက်အတွင်းသို့လှည့်လည်ကြလျှက်
+                    <ul style="list-style-type: none;">
+                        <li>(၁) ဂျွမ်းဘားကစားပြသခြင်း</li>
+                        <li>(၂) ဒါးမရှည် တုတ်ရှည်ထိပ်တွင် ဓားမ တတ်သိုင်းကစားပြခြင်း။</li>
+                        <li>(၃) ၃- ခွလှံတန် သိုင်းကစားခြင်းတိုပြသအလှူခံလေ့ရှိပါသည်။</li>
+                    </ul>
+                    အဓိကအားဖြင့်၊ ၁၉၃၆ - ၃၇ လောက်တွင်ဖြစ်ပွားသော ကုလားမြန်မာ အဓိကရုဏ်းတွင် ဗိုလ်တစ်ထောင်မြို့နယ်သို့ ခေတ္တအလည်ရောက်လာသော မြန်မာလူမျိုးညီအကိုနှစ်ဦးတို့ သည်ဆွမ်းခံသွားရင်း ငှက်သင့်ကိုသကဲ့သိုအဓိကရုဏ်းနှင့်ကြုံလာခဲ့ပါသည်။
+                </p>
 
-            <p>
-                အထက်ပါ အကြောင်းအချက်တို့သည် ကျွန်ုပ်အား သိုင်းပညာကို နှစ်သက်မြတ်နိုးစေခြင်း ဝါသနာပါစေခြင်း လိုက်စားစေခြင်း လှုံ့ဆော်လာခဲ့ရာ မူလဗီဇအားဖြင့် ငယ်စဉ်ကပင် ထိုးသတ် နပမ်းလုံး တုတ် ဓား လက်နက် ဖြင့်လှုပ်ရှားရသည်ကို ဝါသနာထုံခဲ့သည့်အားလျှော်စွာပို၍ ထကြွနိုးကြားခဲ့ရပါသည်။
-                သို့သော်လည်း ၁၉၄၁-ခုဒီဇင်ဘာလ(၂၃) ရက်နေ့တွင့်မြန်မာပြည်အား၊ ဂျပန်တိုစတင်ဗုံးကြဲတိုက်ခိုက်သဖြင့် ခေတ်ပျက်သွားရာစစ်ပြေးအဖြစ် မြောင်းမြမြို့ သို့သွားရောက်နေထိုင်ခဲ့ရပါသည်။
-                ထို့နောက် ၁၉၄၂ -ခုနှစ်တွင် ရန်ကုန် ကြည့်မြင်တိုင် စမ်းချောင်း မင်္ဂလာလမ်း အိမ်အမှတ်(၂၁) ကျွန်တော့်အဖွား အိမ်သို့ ပြန်လည်ပြောင်းရွေ့ နေထိုင်ခဲ့ကြပါသည်။
-                စမ်းချောင်းအရပ်ဒေသသည်ယခင်မှသည် ယခုတိုင်ရှမ်းနှင့်မြန်မာများနေထိုင်လျှက်ရှိသောဒေသဖြစ်ဖြစ်သည်။ ရှမ်းတို့သည် ဓလေ့ထုံးစံအားဖြင့်၎င်း၊ အလေ့အထအားဖြင့် ၎င်းသိုင်းပညာရပ်အသီးသီးကို မကြာခဏဘာသာရေး မင်္ဂလာပွဲများတွင်အသုံးပြုလေ့ရှိသည်ဖြစ်ရာ ကျွန်တော်၏ မူလဗီဇဝါနာကို တဖန်ပြန်လည်နိူးဆွပေးခဲ့ပါသည်။
-                ထိုစဉ်ရှမ်းပြည် အင်းလေးဒေသမှ ရှမ်းကုန်သည် ဦးလှမောင်နှင့် ဦးဘရင်စသည့်ပုဂ္ဂိုလ်များနှင့်ဆက်သွယ်ရာကျွန်ုပ်၏နေအိမ်မှာပင်- ကျွန်ုပ်နှင့်အတူအခြားပုဂ္ဂိုလ်များပင်ခေတ်ပျက် ( ဂျပန်ခေတ် ) ကာလအတွင်းရှမ်းတရုတ်သိုင်းပညာကိုသင်ကြားခဲ့ပါသည်။
-                ထို့နောက် ၁၉၄၅-ခု ဂျပန်ကို မြန်မာနိုင်ငံမှ ပြန်လည် မောင်းထုတ်ပြီးကာလတွင် ကျွန်ုပ် ၏မိတ်ဆွေနေအိမ်သို ဆွမ်းခံကြွလေ့ရှိသောဦးပဇင်းဘွဲအားဖြင့်(မမှတ်မိ့တော့) လူအမည်အားဖြင့် ဦးလှမြင့်နှင့်တွေ့ဆုံရာ၎င်း၏ဆရာကြီးဦးထော်ငြိမ်းထံဆက်သွယ်အပ်နှင်ပေးခဲ့ပါသည်။
-                ဆရာကြီးဦးထော်ငြိမ်းသည် ဆရာကြီးဦးနေဝင်းနှင့် ဆရာကြီးးဦးပွ တို့၏တပည့်ရင်းဖြစ်ပါသည်။ ကျွန်ုပ်သည်ဆရာကြီးဦးထော်ငြိမ်းထံတွင် ဓားရေးဝိုင်းထွက်ပညာကို ဝိုင်းထွက်လွတ်မြောက်သည် အထိ သင်ကြားခဲ့ပါသည်။
-                ထို့နောက် ဆရာကြီးဦးထော်ငြိမ်း သည် ကျွန်ုပ်အားဆရာကြီးဦးနေဝင်းထံအပ်နှံလျှက် ပညာ ရည်နိုချိုသောက်စိုစေခဲ့ရာ ဓားတစ်လက်သိုင်း-ပင်မ နာယက ဆရာကြီးဦးးနေဝင်း ထံတွင် ဆရာကြီးကွယ်လွန်သည် အချိန်အထိ ပညာရည်နို့သောက်စိုခဲ့ပါသည်။
+                <p>
+                    အထက်ပါ အကြောင်းအချက်တို့သည် ကျွန်ုပ်အား သိုင်းပညာကို နှစ်သက်မြတ်နိုးစေခြင်း ဝါသနာပါစေခြင်း လိုက်စားစေခြင်း လှုံ့ဆော်လာခဲ့ရာ မူလဗီဇအားဖြင့် ငယ်စဉ်ကပင် ထိုးသတ် နပမ်းလုံး တုတ် ဓား လက်နက် ဖြင့်လှုပ်ရှားရသည်ကို ဝါသနာထုံခဲ့သည့်အားလျှော်စွာပို၍ ထကြွနိုးကြားခဲ့ရပါသည်။
+                    သို့သော်လည်း ၁၉၄၁-ခုဒီဇင်ဘာလ(၂၃) ရက်နေ့တွင့်မြန်မာပြည်အား၊ ဂျပန်တိုစတင်ဗုံးကြဲတိုက်ခိုက်သဖြင့် ခေတ်ပျက်သွားရာစစ်ပြေးအဖြစ် မြောင်းမြမြို့ သို့သွားရောက်နေထိုင်ခဲ့ရပါသည်။
+                    ထို့နောက် ၁၉၄၂ -ခုနှစ်တွင် ရန်ကုန် ကြည့်မြင်တိုင် စမ်းချောင်း မင်္ဂလာလမ်း အိမ်အမှတ်(၂၁) ကျွန်တော့်အဖွား အိမ်သို့ ပြန်လည်ပြောင်းရွေ့ နေထိုင်ခဲ့ကြပါသည်။
+                    စမ်းချောင်းအရပ်ဒေသသည်ယခင်မှသည် ယခုတိုင်ရှမ်းနှင့်မြန်မာများနေထိုင်လျှက်ရှိသောဒေသဖြစ်ဖြစ်သည်။ ရှမ်းတို့သည် ဓလေ့ထုံးစံအားဖြင့်၎င်း၊ အလေ့အထအားဖြင့် ၎င်းသိုင်းပညာရပ်အသီးသီးကို မကြာခဏဘာသာရေး မင်္ဂလာပွဲများတွင်အသုံးပြုလေ့ရှိသည်ဖြစ်ရာ ကျွန်တော်၏ မူလဗီဇဝါနာကို တဖန်ပြန်လည်နိူးဆွပေးခဲ့ပါသည်။
+                    ထိုစဉ်ရှမ်းပြည် အင်းလေးဒေသမှ ရှမ်းကုန်သည် ဦးလှမောင်နှင့် ဦးဘရင်စသည့်ပုဂ္ဂိုလ်များနှင့်ဆက်သွယ်ရာကျွန်ုပ်၏နေအိမ်မှာပင်- ကျွန်ုပ်နှင့်အတူအခြားပုဂ္ဂိုလ်များပင်ခေတ်ပျက် ( ဂျပန်ခေတ် ) ကာလအတွင်းရှမ်းတရုတ်သိုင်းပညာကိုသင်ကြားခဲ့ပါသည်။
+                    ထို့နောက် ၁၉၄၅-ခု ဂျပန်ကို မြန်မာနိုင်ငံမှ ပြန်လည် မောင်းထုတ်ပြီးကာလတွင် ကျွန်ုပ် ၏မိတ်ဆွေနေအိမ်သို ဆွမ်းခံကြွလေ့ရှိသောဦးပဇင်းဘွဲအားဖြင့်(မမှတ်မိ့တော့) လူအမည်အားဖြင့် ဦးလှမြင့်နှင့်တွေ့ဆုံရာ၎င်း၏ဆရာကြီးဦးထော်ငြိမ်းထံဆက်သွယ်အပ်နှင်ပေးခဲ့ပါသည်။
+                    ဆရာကြီးဦးထော်ငြိမ်းသည် ဆရာကြီးဦးနေဝင်းနှင့် ဆရာကြီးးဦးပွ တို့၏တပည့်ရင်းဖြစ်ပါသည်။ ကျွန်ုပ်သည်ဆရာကြီးဦးထော်ငြိမ်းထံတွင် ဓားရေးဝိုင်းထွက်ပညာကို ဝိုင်းထွက်လွတ်မြောက်သည် အထိ သင်ကြားခဲ့ပါသည်။
+                    ထို့နောက် ဆရာကြီးဦးထော်ငြိမ်း သည် ကျွန်ုပ်အားဆရာကြီးဦးနေဝင်းထံအပ်နှံလျှက် ပညာ ရည်နိုချိုသောက်စိုစေခဲ့ရာ ဓားတစ်လက်သိုင်း-ပင်မ နာယက ဆရာကြီးဦးနေဝင်း ထံတွင် ဆရာကြီးကွယ်လွန်သည် အချိန်အထိ ပညာရည်နို့သောက်စိုခဲ့ပါသည်။
 
-                ဆရာကြီးဦးနေဝင်၏ပညာအမွေခံအဖြစ် ဦးစီးဆောင်ရွက်ခြင်း
-                ကျွန်ုပ်သည် ဆရာကြီးဦးနေဝင်း ကွယ်လွန်သွားပြီးးနောက် ဓားတစ်လက်သိုင်းပင်မအဖွဲအစည်းနှင့်ပတ်သတ်၍၊မမျော်လင့်သောပြဿနာတစ်ရပ် ပေါ်ပေါက်ခဲ့ရာ၊ အနာဂတ်တွင်းပိုမိုရှုတ်ထွေး သည့်ပြဿနာမျိုး ထပ်မံ မဖြစ်ပွားစေခြင်းငှါ မြန်မာနိုင်ငံသိုင်းအဖွဲချုပ် နာယကဆရာကြီးများ၏ဆုံးဖြတ်ဆောင်ရွက်မူဖြင့်ဆရာကြီးနေဝင်း၏ ဓားတစ်လက်သိုင်းပင်မ နှင့် အဖွဲခွဲများအား တစ်ခန်းတဏ္ဍ ရပ်စိုင်းစေခဲ့ပြီး ကျွန်ုပ်အား ကျွန်ုပ်ဦးစီးသော သိုင်းအဖွဲအမည်သစ်ဖြင့်၊ဆရာကြီး၏ ပညာအမွေခံအဖြစ် ဆရာကြီးနှင့် ဆရာကြီးများ၏ပညာရပ်များကို ဆက်လက်ဖြန့်ဖြူးရန်တာဝန်ပေးအပ်ခဲ့ပါသည်။
-                ထို့ကြောင့် ကျွန်ုပ်သည် သာကီနေဝဏ်းသိုင်း အမည်၏ အဓိပ္ပာယ်ဖွင့်ဆိုချက်ပါအတိုင်း သာကီနေဝဏ်း(ပင်မ) ကို ဆရာကြီးဦးနေဝင်း ၏ ပညာ့အမွေခံ အဖြစ် ဦးစီးဖွဲစည်း တည်ဆောက်ရခြင်း ဖြစ်ပါသည်။
-            </p>
-        </main>
+                    ဆရာကြီးဦးနေဝင်၏ပညာအမွေခံအဖြစ် ဦးစီးဆောင်ရွက်ခြင်း
+                    ကျွန်ုပ်သည် ဆရာကြီးဦးနေဝင်း ကွယ်လွန်သွားပြီးနောက် ဓားတစ်လက်သိုင်းပင်မအဖွဲ့အစည်းနှင့်ပတ်သက်၍၊ မမျှော်လင့်သောပြဿနာတစ်ရပ် ပေါ်ပေါက်ခဲ့ရာ၊ အနာဂတ်တွင် ပိုမိုရှုပ်ထွေးသည့်ပြဿနာမျိုး ထပ်မံမဖြစ်ပွားစေခြင်းငှါ မြန်မာနိုင်ငံသိုင်းအဖွဲ့ချုပ် နာယကဆရာကြီးများ၏ ဆုံးဖြတ်ဆောင်ရွက်မှုဖြင့် ဆရာကြီးနေဝင်း၏ ဓားတစ်လက်သိုင်းပင်မ နှင့် အဖွဲ့ခွဲများအား တစ်ခန်းရပ်စိုင်းစေခဲ့ပြီး ကျွန်ုပ်အား ကျွန်ုပ်ဦးစီးသော သိုင်းအဖွဲ့အမည်သစ်ဖြင့်၊ ဆရာကြီး၏ ပညာအမွေခံအဖြစ် ဆရာကြီးနှင့် ဆရာကြီးများ၏ပညာရပ်များကို ဆက်လက်ဖြန့်ဖြူးရန် တာဝန်ပေးအပ်ခဲ့ပါသည်။
+                    ထို့ကြောင့် ကျွန်ုပ်သည် သာကီနေဝဏ်းသိုင်း အမည်၏ အဓိပ္ပာယ်ဖွင့်ဆိုချက်ပါအတိုင်း သာကီနေဝဏ်း(ပင်မ) ကို ဆရာကြီးဦးနေဝင်း ၏ ပညာ့အမွေခံ အဖြစ် ဦးစီးဖွဲ့စည်း တည်ဆောက်ရခြင်း ဖြစ်ပါသည်။
+                </p>
+            </main>
 
-        <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
+            <aside class="right-sidebar">
+                <div class="language-switcher">
+                    <a href="#" onclick="changeLanguage('my'); return false;">
+                        <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
+                    </a>
+                    <a href="#" onclick="changeLanguage('en'); return false;">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English"> English
+                    </a>
+                </div>
 
-        <aside class="right-sidebar">
-            <div class="language-switcher">
-                <a href="#" onclick="changeLanguage('my'); return false;">
-                    <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
-                </a>
-                <a href="#" onclick="changeLanguage('en'); return false;">
-                    <img src="https://flagcdn.com/w40/us.png" alt="English"> English
-                </a>
-            </div>
-
-            <h2>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="category.html">Category</a></p>
-                <p><a href="course.html">Course</a></p>
-                <p><a href="about.html">About</a></p>
-                <p><a href="contact.html">Contact</a></p>
-            </h2>
-        </aside>
+                <h2>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="category.html">Category</a></p>
+                    <p><a href="course.html">Course</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </h2>
+            </aside>
+        </div>
 
         <footer class="footer">
             <style>
@@ -226,6 +326,8 @@
             <marquee><h3 class="rainbow-text">***** SMART Group မှ တည်ဆောက်သည် *****</h3></marquee>
         </footer>
     </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
 
     <script>
         let mybutton = document.getElementById("myBtn");

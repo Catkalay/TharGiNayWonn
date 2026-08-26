@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - သာကီနေဝဏ်းသိုင်း</title>
+    <title>သာကီနေဝဏ်းသိုင်း</title>
     <link rel="stylesheet" href="style.css"> 
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -22,8 +22,7 @@
             font-size: 18px;
             margin: 0;
             padding: 0;
-            background-color: #e9e197;
-        }
+            background-color: #e9e197; 
 
         .page-wrapper {
             max-width: 1200px;
@@ -47,7 +46,6 @@
             border-radius: 3px;
         }
 
-       
         .content-container {
             display: flex;
             flex-direction: row;
@@ -55,23 +53,24 @@
             align-items: stretch; 
             width: 100%;
             box-sizing: border-box;
-            gap: 5px;
+            gap: 1px;
         }
 
+        
         .left-sidebar {
             flex: 0 0 26%;
-            max-width: 26%;
+            max-width: 26%; 
             background-color: #530000;
             padding: 5px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             box-sizing: border-box;
-            overflow: hidden;
+            overflow: hidden; 
         }
 
         .main-content {
             flex: 0 0 46%;
-            max-width: 46%;
+            max-width: 46%; 
             background-color: transparent; 
             padding: 0 5px;
             box-sizing: border-box;
@@ -80,7 +79,7 @@
 
         .right-sidebar {
             flex: 0 0 26%;
-            max-width: 26%;
+            max-width: 26%; 
             background-color: #530000;
             padding: 5px;
             border-radius: 8px;
@@ -101,6 +100,43 @@
             max-width: 100%;
             height: auto;
             box-sizing: border-box;
+        }
+
+        .main-content ul {
+            margin-left: 20px;
+        }
+
+        .language-switcher {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .language-switcher a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .language-switcher a:hover {
+            background: #ddd;
+            color: #007bff;
+        }
+        .language-switcher img {
+            width: 24px;
+            height: auto;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
         .right-sidebar h2 {
@@ -143,6 +179,7 @@
             padding: 15px;
             border-radius: 4px;
         }
+
         #myBtn:hover {
             background-color: #0a72a1;
         }

@@ -294,8 +294,34 @@
         </div>
 
         <footer class="footer">
+            <style>
+                .rainbow-text {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    background: linear-gradient(
+                        270deg,
+                        red, orange, yellow, green, blue, indigo, violet, red
+                    );
+                    background-size: 1000% 1000%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: rainbow 8s ease infinite;
+                    -webkit-text-stroke: 0.8px rgb(17, 17, 17);
+                    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.8));
+                }
+                @keyframes rainbow {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+            </style>
             <marquee><h3 class="rainbow-text">***** SMART Group မှ တည်ဆောက်သည် *****</h3></marquee>
-        <script>
+        </footer>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
+
+    <script>
         let mybutton = document.getElementById("myBtn");
         window.onscroll = function() {scrollFunction()};
 

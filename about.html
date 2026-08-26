@@ -22,8 +22,7 @@
             font-size: 18px;
             margin: 0;
             padding: 0;
-            background-color: #e9e197;
-        }
+            background-color: #e9e197; 
 
         .page-wrapper {
             max-width: 1200px;
@@ -47,7 +46,6 @@
             border-radius: 3px;
         }
 
-        
         .content-container {
             display: flex;
             flex-direction: row;
@@ -55,9 +53,10 @@
             align-items: stretch; 
             width: 100%;
             box-sizing: border-box;
-            gap: 5px;
+            gap: 1px;
         }
 
+        
         .left-sidebar {
             flex: 0 0 26%;
             max-width: 26%; 
@@ -103,6 +102,43 @@
             box-sizing: border-box;
         }
 
+        .main-content ul {
+            margin-left: 20px;
+        }
+
+        .language-switcher {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .language-switcher a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .language-switcher a:hover {
+            background: #ddd;
+            color: #007bff;
+        }
+        .language-switcher img {
+            width: 24px;
+            height: auto;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
         .right-sidebar h2 {
             font-size: 18px;
             margin: 0;
@@ -144,27 +180,7 @@
             border-radius: 4px;
         }
         #myBtn:hover {
-            background-color: #2bff00;
-        }
-
-        .rainbow-text {
-            font-size: 1.5em;
-            font-weight: bold;
-            background: linear-gradient(
-                270deg,
-                red, orange, yellow, green, blue, indigo, violet, red
-            );
-            background-size: 1000% 1000%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbow 8s ease infinite;
-            -webkit-text-stroke: 0.8px white;
-            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.8));
-        }
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background-color: #d3009e;
         }
     </style>
 </head>
@@ -214,12 +230,12 @@
             </aside>
             
             
-            <main class="main-content">
+             <main class="main-content">
                 <marquee>
-                    <h1 style="color:Tomato;">" မင်္ဂလာပါ "
-                        <span style="color:DodgerBlue;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
-                        <span style="color:MediumSeaGreen;">ကျေးဇူးအများကြီး 
-                        <span style="color:rgb(86, 60, 179);">တင်ပါတယ် *****</span>
+                    <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
+                        <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
+                        <span style="color:MediumSeaGreen; -webkit-text-stroke: 1px black;">ကျေးဇူးအများကြီး 
+                        <span style="color:rgb(86, 60, 179); -webkit-text-stroke: 1px black;">တင်ပါတယ် *****</span>
                         </span>
                         </span>
                     </h1>
@@ -230,13 +246,66 @@
                     <h1>Thar Gi Nay Wonn</h1>
                 </center>
                 
-                <h2>ABOUT</h2>
-                <center>
-                    <h3>Coming Soon</h3>
-                </center>
+                <center><h2>သာကီနေဝဏ်း သိုင်းအဖွဲ့ သိုင်းပညာစဉ် နှင့် ဆရာစဉ်ဆက်သမိုင်း</h2></center>
+                <p>သာကီနေဝဏ်း သိုင်းအဖွဲ့၏ မူရင်းပညာစဉ်မှာ "ဓါးတစ်လက် ဝိုင်းထွက်" (တစ်ယောက်နှင့်အများ ဝိုင်းထွက်) ပညာရပ် ဖြစ်ပါသည်။ ပင်မစာမျက်နှာတွင် ဖော်ပြထားပြီးဖြစ်သည့်အတိုင်း သာကီနေဝဏ်း သိုင်းအဖွဲ့ ဖြစ်ပေါ်လာပုံသမိုင်းကြောင်းကို လေ့လာခဲ့ပြီးဖြစ်မည်ဟု ယူဆပါသည်။
+                    ယခု ဆက်လက်ဖော်ပြလိုသည်မှာ တည်ထောင်သူနာယက ဆရာကြီး ဦးလှအောင်မှတစ်ဆင့် "ဓါးတစ်လက် ဝိုင်းထွက်" သိုင်းပညာကို လက်ဆင့်ကမ်း ပညာအမွေသင်ကြားခွင့် ရခဲ့သည့် အဆင့်ဆင့်သော ဆရာကြီးများ၊ ဆရာ/ဆရာမများ၏ စာရင်းဇယား ဖြစ်ပါသည်။
+                </p>
+                <h3>၁။ ပထမအဆင့် လက်ရင်းတပည့်ကြီးများ</h3>
+                <p>တည်ထောင်သူ နာယက ဆရာကြီး ဦးလှအောင်၏ တိုက်ရိုက်လက်ရင်းတပည့်ကြီးများမှာ အောက်ပါအတိုင်း ဖြစ်ကြပါသည် -</p>
+                    <ul style="list-style-type: none;">
+                    <li>ဆရာကြီး ဦးခင်ဝင်း</li>
+                    <li>ဆရာကြီး ဦးမြင့်ဆွေ</li>
+                    <li>ဆရာကြီး ဦးသိန်းထွန်း</li>
+                    <li>ဆရာကြီး ဦးသိန်းနိုင်</li>
+                </ul>
+                <h3>၂။ ဒုတိယအဆင့် တပည့်များ</h3>
+                <ul style="list-style-type: none;">
+                    <li>ဆရာ နိုင်ဝင်း</li>
+                    <li>ဆရာ စိန်လင်း</li>
+                    <li>ဆရာမ မြင့်မြင့်စိုး</li>
+                    <li>ဆရာမ ဇင်မင်းခိုင်</li>
+                    <li>ဆရာ သန်းလင်းထွန်း</li>
+                    <li>ဆရာ သိန်းဦး</li>
+                    <li>ဆရာ သိန်းစိုး</li>
+                    <li>ဆရာ နေစိုးချစ်</li>
+                </ul>
+                <h3>၃။ တတိယအဆင့် တပည့်များ</h3>
+                <ul style="list-style-type: none;">
+                    <li>ဆရာ ဒေါက်တာ ကျော်သူရ</li>
+                    <li>ဆရာ ဆန်းဦး</li>
+                    <li>ဆရာ ဝင်းကျော်မျိုး</li>
+                    <li>ဆရာ စိုးမိုးနိုင်</li>
+                    <li>ဆရာ ကျော်ဇင်ထွန်း</li>
+                </ul>
+                <h3>တစ်ယောက်နှင့်အများ ဝိုင်းထွက်ပညာ အကြမ်းထွက်အဆင့်အထိ ပညာအမွေ လက်ဆင့်ကမ်းခံရသူများ</h3>
+                <p>အထက်ပါဆရာကြီးများ၊ ဆရာ/ဆရာမများ အနက်မှ အောက်ပါ ပုဂ္ဂိုလ်များကို ဆရာကြီး ဦးလှအောင် ကိုယ်တိုင် "အကြမ်းထွက်" အဆင့်အထိ ပညာအမွေ လက်ဆင့်ကမ်း သင်ကြားပေးခဲ့ပါသည် -</p>
+                <ul style="list-style-type: none;">
+                    <li>ဆရာကြီး ဦးခင်ဝင်း</li>
+                    <li>ဆရာကြီး ဦးမြင့်ဆွေ</li>
+                    <li>ဆရာကြီး ဦးသိန်းထွန်း</li>
+                    <li>ဆရာကြီး ဦးသိန်းနိုင်</li>
+                    <li>ဆရာ ဦးနိုင်ဝင်း</li>
+                    <li>ဆရာမ မြင့်မြင့်စိုး</li>
+                    <li>ဆရာ သန်းလင်းထွန်း</li>
+                    <li>ဆရာမ ဇင်မင်းခိုင်</li>
+                    <li>ဆရာ ဆန်းဦး</li>
+                    <li>ဆရာ စိုးမိုးနိုင်</li>
+                    <li>ဆရာ ကျော်ဇင်ထွန်း</li>
+                    <li>ဆရာ ဝင်းကျော်မျိုး</li>
+                </ul>
+                <p><strong>မှတ်ချက်:</strong> ဤဆရာစဉ်ဆက် စာရင်းတွင် သိုင်းပညာကို လက်ဆင့်ကမ်းပေးခဲ့ကြသော ဆရာကြီး၊ ဆရာမကြီးများစွာ ရှိသေးသော်လည်း လက်ရှိတွင် အမည်စာရင်း မမှတ်မိသေးသည်များ ကျန်ရှိနေပါသေးသည်။ ဆက်လက်စုံစမ်း၍ ပြည့်စုံစွာ ဆက်လက်ဖြည့်သွင်းသွားမည် ဖြစ်ပါသည်။ </p>
             </main>
-            
+
             <aside class="right-sidebar">
+                <div class="language-switcher">
+                    <a href="#" onclick="changeLanguage('my'); return false;">
+                        <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar"> မြန်မာ
+                    </a>
+                    <a href="#" onclick="changeLanguage('en'); return false;">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English"> English
+                    </a>
+                </div>
+
                 <h2>
                     <p><a href="index.html">Home</a></p>
                     <p><a href="category.html">Category</a></p>
@@ -249,6 +318,27 @@
         </div>
 
         <footer class="footer">
+            <style>
+                .rainbow-text {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    background: linear-gradient(
+                        270deg,
+                        red, orange, yellow, green, blue, indigo, violet, red
+                    );
+                    background-size: 1000% 1000%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: rainbow 8s ease infinite;
+                    -webkit-text-stroke: 0.8px rgb(17, 17, 17);
+                    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.8));
+                }
+                @keyframes rainbow {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+            </style>
             <marquee><h3 class="rainbow-text">***** SMART Group မှ တည်ဆောက်သည် *****</h3></marquee>
         </footer>
     </div>

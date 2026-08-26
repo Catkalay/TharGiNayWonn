@@ -6,12 +6,11 @@
     <title>သာကီနေဝဏ်းသိုင်း</title>
     <link rel="stylesheet" href="style.css"> 
     
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-92PB0FHFTR');
     </script>
 
@@ -56,7 +55,6 @@
             gap: 1px;
         }
 
-        
         .left-sidebar {
             flex: 0 0 26%;
             max-width: 26%; 
@@ -203,6 +201,44 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
+        /* Contact Form Styles */
+        .contact-form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -211,7 +247,6 @@
         <header class="header">
             <img src="Titleedit.webp" alt="Title Banner">
         </header>
-        
         
         <div class="content-container">
             
@@ -250,7 +285,6 @@
                 </div>
             </aside>
            
-            
             <main class="main-content">
                 <marquee>
                     <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
@@ -269,9 +303,33 @@
                 
                 <h2>CONTACT</h2>
                 <center>
-                    <h3>ကြည့်ရှုသူ ရည်ရွယ်ချက်လေးနဲ့.......အရေအတွက်</h3>
+                    <h3></h3>
                 </center>
+
+                
+                <div class="contact-form-container">
+                    <h2>ဆက်သွယ်ရန် ဖောင် (Contact Form)</h2>
+                    <form action="https://formspree.io/f/xnpaergg" method="POST">
+                        <div class="form-group">
+                            <label for="name">နာမည် (Name):</label>
+                            <input type="text" id="name" name="name" required placeholder="သင့်နာမည် ဖြည့်ပါ">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">အီးမေးလ် (Email):</label>
+                            <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">ပေးပို့လိုသည့် စာသား (Message):</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="ရေးလိုသည်များကို ဤနေရာတွင် ရေးပါ..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">ပေးပို့မည် (Submit)</button>
+                    </form>
+                </div>
             </main>
+
            <aside class="right-sidebar">
                 <div class="language-switcher">
                     <a href="#" onclick="changeLanguage('my'); return false;">
@@ -293,27 +351,6 @@
 
         </div>
         <footer class="footer">
-            <style>
-                .rainbow-text {
-                    font-size: 1.5em;
-                    font-weight: bold;
-                    background: linear-gradient(
-                        270deg,
-                        red, orange, yellow, green, blue, indigo, violet, red
-                    );
-                    background-size: 1000% 1000%;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    animation: rainbow 8s ease infinite;
-                    -webkit-text-stroke: 0.8px rgb(17, 17, 17);
-                    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.8));
-                }
-                @keyframes rainbow {
-                    0% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                    100% { background-position: 0% 50%; }
-                }
-            </style>
             <marquee><h3 class="rainbow-text">***** SMART Group မှ တည်ဆောက်သည် *****</h3></marquee>
         </footer>
     </div>
@@ -361,4 +398,3 @@
 
 </body>
 </html>
-  

@@ -295,12 +295,7 @@
 
         <footer class="footer">
             <marquee><h3 class="rainbow-text">***** SMART Group မှ တည်ဆောက်သည် *****</h3></marquee>
-        </footer>
-    </div>
-
-    <button onclick="topFunction()" id="myBtn" title="Go to top">အပေါ်သို့</button>
-
-    <script>
+        <script>
         let mybutton = document.getElementById("myBtn");
         window.onscroll = function() {scrollFunction()};
 
@@ -317,6 +312,27 @@
           document.documentElement.scrollTop = 0;
         }
     </script>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'my',
+        includedLanguages: 'en,my',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    function changeLanguage(langCode) {
+        var selectField = document.querySelector(".goog-te-combo");
+        if (selectField) {
+            selectField.value = langCode;
+            selectField.dispatchEvent(new Event('change'));
+        }
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

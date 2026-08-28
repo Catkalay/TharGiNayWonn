@@ -6,7 +6,7 @@
     <title>သာကီနေဝဏ်းသိုင်း</title>
     <link rel="stylesheet" href="style.css"> 
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -56,6 +56,7 @@
             gap: 1px;
         }
 
+        
         .left-sidebar {
             flex: 0 0 26%;
             max-width: 26%; 
@@ -74,8 +75,6 @@
             padding: 0 5px;
             box-sizing: border-box;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
         }
 
         .right-sidebar {
@@ -184,123 +183,6 @@
         #myBtn:hover {
             background-color: #d3009e;
         }
-
-       
-        .chat-container {
-            background: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            height: 400px;
-            margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .auth-section {
-            padding: 15px;
-            background: #f1f1f1;
-            border-bottom: 1px solid #ccc;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            text-align: center;
-        }
-        .auth-section input {
-            padding: 6px 10px;
-            margin: 4px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .auth-section button {
-            padding: 6px 12px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            margin: 4px;
-        }
-        .auth-section button:hover {
-            background: #218838;
-        }
-        .user-status {
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .user-status button {
-            background: #dc3545;
-            padding: 3px 8px;
-            font-size: 12px;
-        }
-
-        .chat-box {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background: #f9f9f9;
-        }
-        .message-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            padding: 8px 12px;
-            border-radius: 8px;
-            max-width: 85%;
-            word-break: break-word;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        .message-user {
-            font-size: 13px;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 2px;
-        }
-        .message-text {
-            font-size: 15px;
-            color: #333;
-        }
-        .chat-input-area {
-            display: flex;
-            padding: 8px;
-            background: white;
-            border-top: 1px solid #ddd;
-            gap: 6px;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-        }
-        .chat-input-area input {
-            flex: 1;
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            outline: none;
-            font-size: 14px;
-        }
-        .chat-input-area button {
-            background: #0084ff;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .chat-input-area button:hover {
-            background: #006bb3;
-        }
-        .error-msg {
-            color: red;
-            font-size: 12px;
-            margin-top: 4px;
-        }
     </style>
 </head>
 <body>
@@ -309,6 +191,7 @@
         <header class="header">
             <img src="Titleedit.webp" alt="Title Banner">
         </header>
+        
         
         <div class="content-container">
             
@@ -347,6 +230,7 @@
                 </div>
             </aside>
             
+            
              <main class="main-content">
                 <marquee>
                     <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
@@ -364,37 +248,9 @@
                 </center>
                 
                
-                <div class="chat-container">
-                    
-                    <div class="auth-section" id="authSection">
-                        <div id="loggedOutView">
-                            <p style="margin: 0 0 8px 0; font-size: 14px; font-weight: bold;">စာပို့ရန် အကောင့်ဝင်ပါ (သို့) အကောင့်အသစ်လုပ်ပါ</p>
-                            <input type="email" id="authEmail" placeholder="Email ရိုက်ထည့်ရန်...">
-                            <input type="password" id="authPassword" placeholder="Password (6 လုံးအထက်)...">
-                            <br>
-                            <button onclick="loginUser()">အကောင့်ဝင်ရန် (Login)</button>
-                            <button onclick="registerUser()" style="background: #007bff;">အကောင့်အသစ်လုပ်ရန် (Sign Up)</button>
-                            <div id="authError" class="error-msg"></div>
-                        </div>
-                        <div id="loggedInView" style="display: none;">
-                            <div class="user-status">
-                                <span>👤 <span id="userEmailDisplay"></span> အဖြစ် ဝင်ထားသည်</span>
-                                <button onclick="logoutUser()">ထွက်ရန် (Logout)</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="chat-box" id="chatBox"></div>
-
-                    <div class="chat-input-area" id="chatInputArea" style="opacity: 0.5; pointer-events: none;">
-                        <input type="text" id="messageInput" placeholder="အကောင့်ဝင်ပြီးမှ စာရိုက်နိုင်ပါမည်..." onkeypress="handleKeyPress(event)" disabled>
-                        <button onclick="sendMessage()" id="sendBtn" disabled>ပို့မည်</button>
-                    </div>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 10px;">
-                    <div><a href="index.html">ပင်မ စာမျက်နှာသို့</a></div>
-                    <div><a href="contact.html">ရှေ့ စာမျက်နှာသို့</a></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div><a href="index.html">ပင်မ စာမျက်နှာသို့</a></div>
+                <div><a href="contact.html">ရှေ့ စာမျက်နှာသို့</a></div>
                 </div>
             </main>
 
@@ -465,146 +321,6 @@
         }
     </script>
 
-    
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAbdZ5LLBsZbV217dRz9I0axI1lw7FZ7hy",
-            authDomain: "student-support-chat.firebaseapp.com",
-            databaseURL: "https://student-support-chat-default-rtdb.firebaseio.com",
-            projectId: "student-support-chat",
-            storageBucket: "student-support-chat.firebasestorage.app",
-            messagingSenderId: "263950881468",
-            appId: "1:263950881468:web:a807f279b4e1daf80836b9"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        const auth = getAuth(app);
-
-        const chatBox = document.getElementById('chatBox');
-        const messageInput = document.getElementById('messageInput');
-        const sendBtn = document.getElementById('sendBtn');
-        const chatInputArea = document.getElementById('chatInputArea');
-        const loggedOutView = document.getElementById('loggedOutView');
-        const loggedInView = document.getElementById('loggedInView');
-        const userEmailDisplay = document.getElementById('userEmailDisplay');
-        const authError = document.getElementById('authError');
-
-       
-        window.registerUser = function() {
-            const email = document.getElementById('authEmail').value.trim();
-            const password = document.getElementById('authPassword').value.trim();
-            authError.innerText = "";
-
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Success
-                })
-                .catch((error) => {
-                    authError.innerText = "အမှား: " + error.message;
-                });
-        };
-
-        
-        window.loginUser = function() {
-            const email = document.getElementById('authEmail').value.trim();
-            const password = document.getElementById('authPassword').value.trim();
-            authError.innerText = "";
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Success
-                })
-                .catch((error) => {
-                    authError.innerText = "အမှား: Email သို့မဟုတ် Password မှားယွင်းနေပါသည်။";
-                });
-        };
-
-        
-        window.logoutUser = function() {
-            signOut(auth).then(() => {
-                
-            }).catch((error) => {
-                console.log(error);
-            });
-        };
-
-        
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                
-                loggedOutView.style.display = 'none';
-                loggedInView.style.display = 'block';
-                userEmailDisplay.innerText = user.email;
-                
-                chatInputArea.style.opacity = '1';
-                chatInputArea.style.pointerEvents = 'auto';
-                messageInput.disabled = false;
-                sendBtn.disabled = false;
-                messageInput.placeholder = "စာရိုက်ရန်...";
-            } else {
-                
-                loggedOutView.style.display = 'block';
-                loggedInView.style.display = 'none';
-                
-                chatInputArea.style.opacity = '0.5';
-                chatInputArea.style.pointerEvents = 'none';
-                messageInput.disabled = true;
-                sendBtn.disabled = true;
-                messageInput.placeholder = "အကောင့်ဝင်ပြီးမှ စာရိုက်နိုင်ပါမည်...";
-            }
-        });
-
-      
-        window.sendMessage = function() {
-            const user = auth.currentUser;
-            const text = messageInput.value.trim();
-
-            if (!user || text === "") return;
-
-            const messagesRef = ref(db, 'messages');
-            push(messagesRef, {
-                name: user.email,
-                text: text,
-                timestamp: Date.now()
-            });
-            messageInput.value = "";
-        };
-
-        window.handleKeyPress = function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        };
-
-        
-        const messagesRef = ref(db, 'messages');
-        onChildAdded(messagesRef, (data) => {
-            const messageData = data.val();
-            
-            const msgCard = document.createElement('div');
-            msgCard.classList.add('message-card');
-
-            const userDiv = document.createElement('div');
-            userDiv.classList.add('message-user');
-            userDiv.innerText = messageData.name;
-
-            const textDiv = document.createElement('div');
-            textDiv.classList.add('message-text');
-            textDiv.innerText = messageData.text;
-
-            msgCard.appendChild(userDiv);
-            msgCard.appendChild(textDiv);
-            
-            chatBox.appendChild(msgCard);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        });
-    </script>
-
     <div id="google_translate_element" style="display:none;"></div>
 
     <script type="text/javascript">
@@ -628,3 +344,4 @@
 
 </body>
 </html>
+  

@@ -211,16 +211,14 @@
 
     
     loginBtn.addEventListener('click', () => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithRedirect(provider);
+     const provider = new firebase.auth.GoogleAuthProvider();
+     auth.signInWithPopup(provider).then((result) => {
+      console.log("Logged in:", result.user);
+     }).catch((error) => {
+    console.error("Popup Error:", error);
+    alert("Login Error: " + error.message);
     });
-    auth.getRedirectResult().then((result) => {
-      if (result.user) {
-        console.log("Logged in user:", result.user);
-      }
-    }).catch((error) => {
-      console.error("Redirect Error:", error);
-    });
+});
     
     auth.onAuthStateChanged((user) => {
       if (user) {

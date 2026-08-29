@@ -183,6 +183,22 @@
         #myBtn:hover {
             background-color: #d3009e;
         }
+         @media screen and (max-width: 768px) {
+            .content-container {
+                flex-direction: column; 
+            }
+            .left-sidebar, .main-content, .right-sidebar {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+            h1 {
+                font-size: 20px !important; 
+            }
+            h2 {
+                font-size: 16px !important;
+            }
+        }
     </style>
 </head>
 <body>

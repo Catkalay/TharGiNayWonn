@@ -161,16 +161,14 @@
 
     
     <div id="loginSection" class="login-overlay">
-      <h3>Welcome to Chat Support</h3>
+      <h2>Welcome to Chat</h2>
       <p>စကားပြောရန်အတွက် Google အကောင့်ဖြင့် Login ဝင်ပေးပါခင်ဗျာ။</p>
-      <button id="loginBtn" class="login-btn" style="background: #0084ff; color: white;">Sign in with Google (Gmail)</button>
+      <button id="loginBtn" class="login-btn" style="background:#0084ff; color:white;">Sign in with Google (Gmail)</button>
     </div>
 
     
     <div id="chatSection" style="display: none; flex-direction: column; height: 100%;">
       <div id="messagesBox" class="messages-box"></div>
-      
-      
       <form id="messageForm" class="input-area">
         <input type="text" id="messageInput" placeholder="စာရိုက်ပါ..." required autocomplete="off">
         <button type="submit">Send</button>
@@ -193,7 +191,9 @@
     };
 
     
-    firebase.initializeApp(firebaseConfig);
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
 
     const auth = firebase.auth();
     const db = firebase.database();
@@ -210,14 +210,9 @@
     let currentUser = null;
 
     
-    loginBtn.onclick = () => {
+    loginBtn.addEventListener('click', () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithRedirect(provider);
-    };
-
-    
-    auth.getRedirectResult().catch((error) => {
-      console.error("Login Redirect Error:", error);
     });
 
     
@@ -233,8 +228,6 @@
         `;
 
         document.getElementById('logoutBtn').onclick = () => auth.signOut();
-
-        
         loadMessages();
       } else {
         currentUser = null;

@@ -214,7 +214,13 @@
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithRedirect(provider);
     });
-
+    auth.getRedirectResult().then((result) => {
+      if (result.user) {
+        console.log("Logged in user:", result.user);
+      }
+    }).catch((error) => {
+      console.error("Redirect Error:", error);
+    });
     
     auth.onAuthStateChanged((user) => {
       if (user) {

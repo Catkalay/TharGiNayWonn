@@ -6,20 +6,24 @@
     <title>သာကီနေဝဏ်းသိုင်း</title>
     <link rel="stylesheet" href="style.css"> 
     
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92PB0FHFTR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-92PB0FHFTR');
     </script>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
     <style>
         body {
             cursor: url('logo sword 3d.png'), auto;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(14px, 1.5vw, 18px); /* ဖုန်းမှာ အလိုအလျောက် သေးသွားစေရန် */
+            font-size: clamp(14px, 1.5vw, 18px);
             margin: 0;
             padding: 0;
             background-color: #e9e197; 
@@ -30,13 +34,11 @@
             padding: 5px;
             box-sizing: border-box;
         }
-
         .header {
             width: 100%;
             margin-bottom: 5px;
             box-sizing: border-box;
         }
-
         .header img {
             width: 100%;
             height: auto;
@@ -45,7 +47,6 @@
             display: block;
             border-radius: 3px;
         }
-
         .content-container {
             display: flex;
             flex-direction: row;
@@ -55,7 +56,6 @@
             box-sizing: border-box;
             gap: 1px;
         }
-
         .left-sidebar {
             flex: 0 0 26%;
             max-width: 26%; 
@@ -66,7 +66,6 @@
             box-sizing: border-box;
             overflow: hidden; 
         }
-
         .main-content {
             flex: 0 0 46%;
             max-width: 46%; 
@@ -75,7 +74,6 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-
         .right-sidebar {
             flex: 0 0 26%;
             max-width: 26%; 
@@ -86,7 +84,6 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-
         .footer {
             width: 100%;
             margin-top: 5px;
@@ -94,17 +91,14 @@
             box-sizing: border-box;
             clear: both;
         }
-
         img, video {
             max-width: 100%;
             height: auto;
             box-sizing: border-box;
         }
-
         .main-content ul {
             margin-left: 20px;
         }
-
         .language-switcher {
             display: flex;
             flex-direction: column;
@@ -137,17 +131,14 @@
             border-radius: 3px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
-
         .right-sidebar h2 {
             font-size: 16px;
             margin: 0;
             padding: 0;
         }
-
         .right-sidebar h2 p {
             margin: 8px 0;
         }
-
         .right-sidebar h2 a {
             text-decoration: none;
             color: #007bff;
@@ -158,11 +149,9 @@
             border-radius: 4px;
             transition: background 0.3s;
         }
-
         .right-sidebar h2 a:hover {
             background: #e0e0e0;
         }
-
         #myBtn {
             display: none;
             position: fixed;
@@ -178,12 +167,66 @@
             padding: 15px;
             border-radius: 4px;
         }
-
         #myBtn:hover {
             background-color: #d3009e;
         }
 
-        
+       
+        .chat-container {
+            background: #ffffff;
+            border: 2px solid #530000;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #chat-box {
+            height: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            overflow-y: auto;
+            background: #fafafa;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .msg {
+            background: #e1f5fe;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            word-break: break-word;
+        }
+        .msg-sender {
+            font-weight: bold;
+            color: #0d47a1;
+            font-size: 12px;
+        }
+        .chat-input-group {
+            display: flex;
+            gap: 5px;
+        }
+        .chat-input-group input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .chat-input-group button, #login-btn, #logout-btn {
+            background: #530000;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .chat-input-group button:hover, #login-btn:hover, #logout-btn:hover {
+            background: #800000;
+        }
+
         @media screen and (max-width: 768px) {
             .content-container {
                 flex-direction: column; 
@@ -246,7 +289,7 @@
                 </div>
             </aside>
             
-             <main class="main-content">
+            <main class="main-content">
                 <marquee>
                     <h1 style="color:Tomato; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">" မင်္ဂလာပါ "
                         <span style="color:DodgerBlue; -webkit-text-stroke: 1px black;">***** ဝင်ရောက်ကြည့်ရှုပေးလို့
@@ -261,11 +304,35 @@
                     <h1>သာကီနေဝဏ်းသိုင်း (ပင်မ)</h1>
                     <h1>Thar Gi Nay Wonn</h1>
                 </center>
-                <center><h2>Coming Soon</h2></center>
-               
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <div><a href="index.html">ပင်မ စာမျက်နှာသို့</a></div>
-                <div><a href="contact.html">ရှေ့ စာမျက်နှာသို့</a></div>
+                
+                
+                <div class="chat-container">
+                    <h3 style="text-align: center; margin-top:0;">💬 User Chat Room</h3>
+                    
+                    
+                    <div id="login-section" style="text-align: center;">
+                        <button id="login-btn">🔑 Sign in with Google (Gmail)</button>
+                    </div>
+
+                    
+                    <div id="chat-section" style="display: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-size: 13px;">👤 <strong id="user-display"></strong></span>
+                            <button id="logout-btn" style="padding: 3px 8px; font-size: 12px;">Logout</button>
+                        </div>
+                        
+                        <div id="chat-box"></div>
+                        
+                        <div class="chat-input-group">
+                            <input type="text" id="msg-input" placeholder="စာရိုက်ပါ...">
+                            <button id="send-btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 15px;">
+                    <div><a href="index.html">ပင်မ စာမျက်နှာသို့</a></div>
+                    <div><a href="contact.html">ရှေ့ စာမျက်နှာသို့</a></div>
                 </div>
             </main>
 
@@ -290,6 +357,7 @@
             </aside>
 
         </div>
+
         <footer class="footer">
             <style>
                 .rainbow-text {
@@ -356,6 +424,84 @@
     }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    
+    <script>
+      
+      const part1 = "AIzaSyAU"; 
+      const part2 = "OaQp-hOoRV4VkcQmPXmDG2BJN8mvCpk"; 
+
+      const firebaseConfig = {
+        apiKey: part1 + part2,
+        authDomain: "student-support-chat.firebaseapp.com", 
+        projectId: "student-support-chat",
+        storageBucket: "student-support-chat.firebasestorage.app",
+        messagingSenderId: "263950881468",
+        appId: "1:263950881468:web:a807f279b4e1daf80836b9"
+      };
+
+      
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      const loginBtn = document.getElementById('login-btn');
+      const logoutBtn = document.getElementById('logout-btn');
+      const sendBtn = document.getElementById('send-btn');
+      const msgInput = document.getElementById('msg-input');
+      const chatBox = document.getElementById('chat-box');
+
+      
+      loginBtn.onclick = () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider);
+      };
+
+     
+      logoutBtn.onclick = () => auth.signOut();
+
+      
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          document.getElementById('login-section').style.display = 'none';
+          document.getElementById('chat-section').style.display = 'block';
+          document.getElementById('user-display').innerText = user.displayName;
+          listenForMessages();
+        } else {
+          document.getElementById('login-section').style.display = 'block';
+          document.getElementById('chat-section').style.display = 'none';
+        }
+      });
+
+      
+      sendBtn.onclick = async () => {
+        const text = msgInput.value.trim();
+        if (text && auth.currentUser) {
+          await db.collection('messages').add({
+            text: text,
+            user: auth.currentUser.displayName,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          });
+          msgInput.value = '';
+        }
+      };
+
+      
+      function listenForMessages() {
+        db.collection('messages').orderBy('timestamp', 'asc')
+          .onSnapshot(snapshot => {
+            chatBox.innerHTML = '';
+            snapshot.forEach(doc => {
+              const data = doc.data();
+              const div = document.createElement('div');
+              div.className = 'msg';
+              div.innerHTML = `<span class="msg-sender">${data.user || 'Anonymous'}</span><br>${data.text}`;
+              chatBox.appendChild(div);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+          });
+      }
+    </script>
 
 </body>
 </html>

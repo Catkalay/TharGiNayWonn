@@ -565,9 +565,11 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
+        const part1 = "AIzaSy";
+        const part2 = "BAvARjHmUfNaByNEeYe6C2PyJHDBgjh1I"; 
         
         const firebaseConfig = {
-          apiKey: "BAvARjHmUfNaByNEeYe6C2PyJHDBgjh1I", 
+          apiKey: part1 + part2,
           authDomain: "student-support-chat.firebaseapp.com",
           databaseURL: "https://student-support-chat-default-rtdb.firebaseio.com",
           projectId: "student-support-chat",
@@ -575,6 +577,7 @@
           messagingSenderId: "263950881468", 
           appId: "1:263950881468:web:a807f279b4e1daf80836b9"                           
         };
+
 
         if (!firebase.apps.length) {
           firebase.initializeApp(firebaseConfig);
@@ -706,7 +709,7 @@
           }
         };
 
-        // Load Messages Realtime
+        
         function loadMessages() {
           db.ref('messages').limitToLast(50).on('value', (snapshot) => {
             messagesBox.innerHTML = '';

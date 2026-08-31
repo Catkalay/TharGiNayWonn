@@ -15,7 +15,7 @@
       gtag('config', 'G-92PB0FHFTR');
     </script>
 
-    
+   
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
@@ -210,7 +210,7 @@
             }
         }
 
-        
+        /* Chat UI Styles */
         .chat-container {
             width: 100%;
             height: 440px;
@@ -395,19 +395,7 @@
                     let count = localStorage.getItem('page_view_count') || 0;
                     count = parseInt(count) + 1;
                     localStorage.setItem('page_view_count', count);
-                    
-                    fetch('https://api.counterapi.dev/v1/tharginaywonn-catkalay/video-view/up')
-                      .then(res => res.json())
-                      .then(data => {
-                        if(data && data.count) {
-                          document.getElementById('visits').innerText = data.count;
-                        } else {
-                          document.getElementById('visits').innerText = count;
-                        }
-                      })
-                      .catch(err => {
-                        document.getElementById('visits').innerText = count;
-                      });
+                    document.getElementById('visits').innerText = count;
                   })();
                 </script>
 
@@ -437,7 +425,7 @@
                     <ul>
                     <li>"Sign Up" (သို့မဟုတ်) "အကောင့်အသစ်ဖွင့်ရန်" ဆိုတာကို နှိပ်ပါ။</li>
                     <li>တောင်းဆိုထားသော အချက်အလက်များ (အမည်၊ ဖုန်းနံပါတ် သို့မဟုတ် အီးမေးလ်၊ စကားဝှက်) ကို ဖြည့်သွင်းပါ။</li>
-                    <li>စကားဝှက် (Password) ကို မှတ်မိလွယ်ပြီး လုံခြုံမှုရှိအောင် ဖန်တီးပါ။ (အနည်းဆုံး ၆ လုံး)</li>
+                    <li>စကားဝှက် (Password) ကို မှတ်မိလွယ်ပြီး လုံခြုံမှုရှိအောင် ဖန်တီးပါ။</li>
                     <li>ဖုန်း သို့မဟုတ် အီးမေးလ်သို့ ရောက်လာသော အတည်ပြုကုဒ် (OTP Code) ကို ရိုက်ထည့်ပြီး "Confirm" နှိပ်ပါ။</li>
                     </ul>
                     
@@ -448,29 +436,32 @@
                     <li>"Login" ဘလောက်ကို နှိပ်၍ အကောင့်ထဲသို့ စတင်ဝင်ရောက် အသုံးပြုနိုင်ပါပြီ။</li>
                     </ul>
                     
+                
                 <div class="chat-container">
                     <div class="chat-header">
                         <h3>Chat Support Room</h3>
                         <div id="userInfo" class="user-info"></div>
                     </div>
 
+                    
                     <div id="loginSection" class="login-overlay">
                         <h4 style="margin: 0;">Welcome to Chat</h4>
                         <p style="font-size: 12px; margin: 0; color: #555;">စကားပြောရန် အကောင့်ဝင်ပါ သို့မဟုတ် အကောင့်အသစ် ဖွင့်ပါ။</p>
                         
                         <div class="auth-inputs">
                             <input type="email" id="authEmail" placeholder="Email အီးမေးလ်" required>
-                            <input type="password" id="authPassword" placeholder="Password (အနည်းဆုံး ၆ လုံး)" required>
+                            <input type="password" id="authPassword" placeholder="Password စကားဝှက်" required>
                         </div>
 
                         <div class="auth-btn-group">
-                            <button type="button" id="loginBtn" class="action-btn">Login (ဝင်မည်)</button>
-                            <button type="button" id="signupBtn" class="login-btn">Signup (အကောင့်သစ်ဖွင့်မည်)</button>
+                            <button id="loginBtn" class="action-btn">Login (ဝင်မည်)</button>
+                            <button id="signupBtn" class="login-btn">Signup (အကောင့်အသစ်ဖွင့်မည်)</button>
                         </div>
                         
                         <span id="resetPasswordBtn" class="forgot-link">Password မေ့နေပါသလား?</span>
                     </div>
 
+                    
                     <div id="chatSection" style="display: none; flex-direction: column; height: 100%;">
                         <div id="messagesBox" class="messages-box"></div>
                         <form id="messageForm" class="input-area">
@@ -564,10 +555,12 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+   
     <script>
-        const part1 = "AIzaSy";
-        const part2 = "BAvARjHmUfNaByNEeYe6C2PyJHDBgjh1I"; 
         
+        const part1 = "AIzaSy"; 
+        const part2 = "BAvARjHmUfNaByNEeYe6C2PyJHDBgjh1I";
+
         const firebaseConfig = {
           apiKey: part1 + part2,
           authDomain: "student-support-chat.firebaseapp.com",
@@ -577,7 +570,6 @@
           messagingSenderId: "263950881468", 
           appId: "1:263950881468:web:a807f279b4e1daf80836b9"                           
         };
-
 
         if (!firebase.apps.length) {
           firebase.initializeApp(firebaseConfig);
@@ -610,11 +602,6 @@
 
           if (!email || !password) {
             alert("ကျေးဇူးပြု၍ Email နှင့် Password ရိုက်ထည့်ပါ။");
-            return;
-          }
-
-          if (password.length < 6) {
-            alert("Password သည် အနည်းဆုံး ၆ လုံး ရှိရပါမည်။");
             return;
           }
 
@@ -664,7 +651,7 @@
             });
         });
 
-        
+       
         auth.onAuthStateChanged((user) => {
           if (user) {
             currentUser = user;
